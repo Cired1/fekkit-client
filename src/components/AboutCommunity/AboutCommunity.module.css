@@ -1,0 +1,21 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 1rem;
+  width: 100%;
+  color: #ddd;
+  background-color: #1a1a1b;
+  border: 1px solid #343536;
+  border-radius: 10px;
+}
+
+.title {
+  color: #818384;
+}
+
+.members {
+  display: flex;
+  flex-direction: column;
+  font-weight: bold;
+}

@@ -1,0 +1,22 @@
+.content {
+  display: flex;
+  gap: 2rem;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+  width: 95%;
+  max-width: 1200px;
+  min-height: calc(100vh - 60px);
+}
+
+.rightColumn {
+  display: none;
+}
+
+@media screen and (min-width: 900px) {
+  .rightColumn {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    flex: 1;
+  }
+}

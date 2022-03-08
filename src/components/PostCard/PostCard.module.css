@@ -1,0 +1,151 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding: 5px;
+  width: 100%;
+  color: #ddd;
+  background-color: #1a1a1b;
+  border: 1px solid #343536;
+  border-radius: 10px;
+}
+
+.postInfo {
+  display: flex;
+  gap: 10px;
+  min-height: 50px;
+}
+
+/*  */
+
+.postHeader {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 70%;
+}
+
+.postSubheader {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.communityInfo {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  color: #ddd;
+  cursor: pointer;
+}
+
+.communityInfo:hover {
+  text-decoration: underline;
+}
+
+.communityName {
+  font-size: 0.9rem;
+  font-weight: bold;
+}
+
+.userInfo {
+  display: none;
+  color: #818384;
+  font-size: 0.9rem;
+  font-weight: bold;
+}
+
+.userInfo:hover {
+  text-decoration: underline;
+}
+
+.postDate {
+  display: none;
+  color: #818384;
+  font-size: 0.9rem;
+  font-weight: bold;
+}
+
+/* */
+
+.postTitle {
+  color: #ddd;
+  font-size: 0.9rem;
+  cursor: pointer;
+}
+
+/*  */
+
+.postBody {
+  width: 30%;
+  cursor: pointer;
+}
+
+.postImage {
+  width: 100%;
+  height: 75px;
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+/*  */
+
+.postOptions {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  color: #818384;
+}
+
+/*  */
+
+@media screen and (min-width: 410px) {
+  .postInfo {
+    flex-direction: column;
+  }
+
+  .postHeader {
+    width: 100%;
+  }
+
+  .postBody {
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+    width: 100%;
+    background-color: #030303;
+  }
+
+  .userInfo {
+    display: flex;
+  }
+
+  .postTitle {
+    font-size: 1rem;
+  }
+
+  .postImage {
+    width: 70%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 0;
+  }
+
+  .postOptions {
+    justify-content: flex-start;
+    gap: 1.5rem;
+  }
+}
+
+@media screen and (min-width: 500px) {
+  .postDate {
+    display: flex;
+  }
+}
+
+@media screen and (min-width: 700px) {
+  .postTitle {
+    font-size: 1.1rem;
+    font-weight: bold;
+  }
+}

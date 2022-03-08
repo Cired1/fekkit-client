@@ -1,0 +1,33 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding: 1rem 0;
+  border-bottom: 1px solid #343536;
+}
+
+.top {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.user {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.userName {
+  font-weight: bold;
+  color: #ddd;
+}
+
+.postDate {
+  font-weight: bold;
+  color: #818384;
+}
+
+.userName:hover {
+  text-decoration: underline;
+}

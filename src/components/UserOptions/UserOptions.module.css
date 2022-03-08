@@ -1,0 +1,19 @@
+.container {
+  margin-top: 1rem;
+  width: 100%;
+  flex-grow: 1;
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 0.5rem;
+}
+
+.list li {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #ddd;
+}

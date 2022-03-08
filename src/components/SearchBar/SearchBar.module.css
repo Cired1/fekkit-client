@@ -1,0 +1,39 @@
+.container {
+  min-width: 170px;
+  width: 60%;
+  max-width: 600px;
+}
+
+.searchForm {
+  position: relative;
+  width: 100%;
+}
+
+.searchInput {
+  padding: 0.5rem 0.75rem;
+  padding-left: 1.75rem;
+  width: inherit;
+  color: #ddd;
+  font-size: 0.8rem;
+  background-color: #272729;
+  border: 1px solid #343536;
+  border-radius: 10px;
+}
+
+.searchInput:hover {
+  background-color: #1a1a1b;
+  border: 1px solid #ddd;
+}
+
+.searchInput:focus {
+  background-color: #1a1a1b;
+  outline: none !important;
+  border: 1px solid #ddd;
+}
+
+.searchIcon {
+  position: absolute;
+  top: 10px;
+  left: 8px;
+  color: #ddd;
+}

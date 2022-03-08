@@ -1,0 +1,26 @@
+.container {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  padding: 0.5rem 0.5rem;
+  font-size: 1rem;
+  background-color: #1a1a1b;
+  border: 1px solid #1a1a1b;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.container:hover {
+  border: 1px solid #343536;
+}
+
+.userIcon {
+  color: #ddd;
+}
+
+@media screen and (min-width: 700px) {
+  .container {
+    padding-right: 1rem;
+    padding-left: 1rem;
+  }
+}
