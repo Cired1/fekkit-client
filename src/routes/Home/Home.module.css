@@ -6,6 +6,11 @@
   min-height: inherit;
 }
 
+.title {
+  margin-bottom: 1rem;
+  color: #ddd;
+}
+
 .content {
   display: flex;
   gap: 2rem;

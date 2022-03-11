@@ -2,7 +2,7 @@ import Button from "../Button/Button";
 import RoundPortrait from "../RoundPortrait/RoundPortrait";
 import styles from "./Banner.module.css";
 
-const Banner = () => {
+const Banner = ({ name }) => {
     return (
         <section className={styles.container}>
             <div className={styles.top}>
@@ -21,7 +21,7 @@ const Banner = () => {
                 <div className={styles.communityInfo}>
                     <h3>Descripción corta</h3>
                     <div className={styles.joinCommunity}>
-                        <h4>r/nba</h4>
+                        <h4>r/{name}</h4>
                         <Button
                             bgColor="#ddd"
                             fgColor="#222"

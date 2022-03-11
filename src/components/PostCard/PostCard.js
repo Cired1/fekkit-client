@@ -1,73 +1,59 @@
 import styles from "./PostCard.module.css";
 import { Link } from "react-router-dom";
-import { FaRegComment, FaShare } from "react-icons/fa";
-import Likes from "../Likes/Likes";
-import TitleIcon from "../TitleIcon/TitleIcon";
 import RoundPortrait from "../RoundPortrait/RoundPortrait";
+import PostOptions from "../PostOptions/PostOptions";
+import { useEffect, useState } from "react";
+import communityService from "../../services/communityService";
+import userService from "../../services/userService";
 
-const PostCard = ({ comments, id, img, title, upvotes, communityId }) => {
-    //Hacer fetch al endpoint de comunidades con la communityId para obtener el nombre y la imagen
-    //Hacer fetch al endpoint de usuarios con el userId para obtener el nombre del usuario
+const PostCard = ({ content, title, community_id, user_id, _id }) => {
+
+    const [community, setCommunity] = useState([]);
+    const [user, setUser] = useState([]);
+
+    useEffect(() => {
+        communityService.getCommunity(community_id)
+            .then((data) => setCommunity(data))
+    }, [community_id])
+
+    useEffect(() => {
+        userService.getUser(user_id)
+            .then((data) => setUser(data))
+    }, [user_id])
 
     return (
         <div className={styles.container}>
-            <div className={styles.postInfo}>
-                <div className={styles.postHeader}>
-                    <div className={styles.postSubheader}>
-                        <Link
-                            to={`/communities/${communityId}`}
-                            className={styles.communityInfo}
-                        >
-                            <RoundPortrait
-                                image={img}
-                                desc="community"
-                                size={20}
-                            />
-                            <span className={styles.communityName}>
-                                r/subname
-                            </span>
-                        </Link>
-                        <Link
-                            to="/user/1"
-                            className={styles.userInfo}
-                        >
-                            Posted by u/Usuario1
-                        </Link>
-                        <span className={styles.postDate}>
-                            2 hours ago
-                        </span>
-                    </div>
-                    <Link
-                        to={`/communities/${communityId}/posts/${id}`}
-                        className={styles.postTitle}
+            <div className={styles.postHeader}>
+                {community
+                    ? <Link
+                        to={`/communities/${community_id}`}
+                        className={styles.postHeaderCommunity}
                     >
-                        {title}
+                        f/{community.name}
                     </Link>
-                </div>
-
-                <Link
-                    to={`/communities/${communityId}/posts/${id}`}
-                    className={styles.postBody}
-                >
-                    <img 
-                        src={img} 
-                        alt="post" 
-                        className={styles.postImage} 
-                    />
-                </Link>
+                    : null
+                }
+                {user
+                    ? <Link
+                        to={`/users/${user_id}`}
+                        className={styles.postHeaderUser}
+                    >
+                        Posted by u/{user.name}
+                    </Link>
+                    : null
+                }
             </div>
-
-            <div className={styles.postOptions}>
-                <Likes likes={upvotes} />
-                <TitleIcon
-                    icon={<FaRegComment />}
-                    title={comments}
-                />
-                <TitleIcon
-                    icon={<FaShare />}
-                    title="Share"
-                />
-            </div>
+            <Link
+                to={`/communities/${community_id}/posts/${_id}`}
+                className={styles.postBody}
+            >
+                <h2 className={styles.postTitle}>{title}</h2>
+                <p className={styles.postContent}>{content}</p>
+            </Link>
+            <PostOptions
+                upvotes={50}
+                comments={50}
+            />
         </div>
     )
 }

@@ -28,9 +28,12 @@
   background-color: #1a1a1b;
 }
 
-.notlogged {
-  width: 100%;
-  background-color: red;
+.loginOptions {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  height: 100%;
 }
 
 .closeSidebar {

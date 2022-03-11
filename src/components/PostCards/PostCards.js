@@ -1,11 +1,13 @@
 import styles from "./PostCards.module.css";
-import { posts } from "../../data"
 import PostCard from "../PostCard/PostCard";
 
-const PostCards = () => {
+const PostCards = ({posts}) => {
+
     return (
         <section className={styles.container}>
-            {posts.map((post) => <PostCard key={post.id} {...post} />)}
+            {posts
+                ? posts.map((post) => <PostCard key={post._id} {...post} />)
+                : null}
         </section>
     )
 }

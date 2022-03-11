@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useSelector } from "react-redux";
 import RoundPortrait from "../RoundPortrait/RoundPortrait";
 import styles from "./UserCard.module.css";
 
@@ -9,6 +10,8 @@ const UserCard = () => {
         setIsOnline(!isOnline);
     }
 
+    const { user } = useSelector((state) => state.auth);
+
     return (
         <div className={styles.container}>
             <div className={styles.portrait}>
@@ -18,7 +21,7 @@ const UserCard = () => {
                     size={100}
                 />
             </div>
-            <h4 className={styles.name}>u/Cired2</h4>
+            <h4 className={styles.name}>u/{user.name}</h4>
             <button className={`${isOnline ? styles.btnStatusOn : styles.btnStatusOff}`} onClick={handleStatus}>
                 Online Status: {isOnline ? "On" : "Off"}
             </button>

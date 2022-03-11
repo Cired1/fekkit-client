@@ -1,13 +1,9 @@
 import { Routes, Route } from "react-router-dom"
+import { ToastContainer } from "react-toastify";
+import 'react-toastify/dist/ReactToastify.css'
+import { Community, Home, Layout, Login, NotFound, Post, Register, User } from "./routes"
 import Navbar from "./components/Navbar/Navbar";
 import Sidebar from "./components/Sidebar/Sidebar";
-import Community from "./routes/Community/Community";
-import Home from "./routes/Home/Home";
-import Layout from "./routes/Layout/Layout";
-import Login from "./routes/Login/Login";
-import NotFound from "./routes/NotFound/NotFound";
-import Post from "./routes/Post/Post";
-import User from "./routes/User/User";
 
 function App() {
   return (
@@ -21,9 +17,11 @@ function App() {
           <Route path="communities/:id/posts/:id" element={<Post />} />
           <Route path="users/:id" element={<User />} />
           <Route path="login" element={<Login />} />
+          <Route path="register" element={<Register />} />
           <Route path="*" element={<NotFound />} />
         </Route>
       </Routes>
+      <ToastContainer />
     </div>
   );
 }

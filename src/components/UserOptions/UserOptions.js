@@ -1,10 +1,24 @@
+import { logout, reset } from "../../features/authSlice";
+import { closeSidebar } from "../../features/sidebarSlice";
+import { useDispatch } from "react-redux";
+import { toast } from "react-toastify";
 import { FaLink, FaMoon, FaRegBookmark, FaRegUserCircle } from "react-icons/fa";
+import { FiLogOut, FiSettings } from "react-icons/fi";
 import { BiTimeFive } from "react-icons/bi";
-import styles from "./UserOptions.module.css";
 import TitleIcon from "../TitleIcon/TitleIcon";
-import { FiSettings } from "react-icons/fi";
+import styles from "./UserOptions.module.css";
 
 const UserOptions = () => {
+
+    const dispatch = useDispatch();
+
+    const handleLogout = () => {
+        dispatch(logout());
+        dispatch(reset());
+        dispatch(closeSidebar());
+        toast.success("Session closed successfully", { theme: "dark" })
+    }
+
     return (
         <div className={styles.container}>
             <ul className={styles.list}>
@@ -42,6 +56,12 @@ const UserOptions = () => {
                     <TitleIcon
                         icon={<FaMoon />}
                         title="Change theme"
+                    />
+                </li>
+                <li onClick={handleLogout}>
+                    <TitleIcon
+                        icon={<FiLogOut />}
+                        title="Log Out"
                     />
                 </li>
             </ul>

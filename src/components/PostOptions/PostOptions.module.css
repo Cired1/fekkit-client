@@ -1,0 +1,13 @@
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  color: #818384;
+}
+
+@media screen and (min-width: 410px) {
+  .container {
+    justify-content: flex-start;
+    gap: 1.5rem;
+  }
+}
