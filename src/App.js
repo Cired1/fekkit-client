@@ -1,7 +1,7 @@
 import { Routes, Route } from "react-router-dom"
 import { ToastContainer } from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css'
-import { Community, Home, Layout, Login, NotFound, Post, Register, User } from "./routes"
+import { Community, CreateCommunity, Home, Layout, Login, NotFound, Post, Register, User } from "./routes"
 import Navbar from "./components/Navbar/Navbar";
 import Sidebar from "./components/Sidebar/Sidebar";
 
@@ -13,6 +13,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route index element={<Home />} />
+          <Route path="communities" element={<CreateCommunity />} />
           <Route path="communities/:id" element={<Community />} />
           <Route path="communities/:id/posts/:id" element={<Post />} />
           <Route path="users/:id" element={<User />} />

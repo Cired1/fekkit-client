@@ -8,6 +8,8 @@ import UserOptions from "../UserOptions/UserOptions"
 import UserStats from "../UserStats/UserStats"
 import styles from "./Sidebar.module.css"
 
+import bgImage from "../../assets/images/logo.png"
+
 const Sidebar = () => {
     const dispatch = useDispatch();
 
@@ -28,21 +30,36 @@ const Sidebar = () => {
                         <UserOptions />
                     </>
                     : <div className={styles.loginOptions}>
-                        <Link to="/login">
-                            <Button
-                                text="Log In"
+                        <img src={bgImage} alt="logo" className={styles.bgImage} />
+                        <div className={styles.message}>
+                            <h2 className={styles.title}>
+                                Still not part of the community?
+                            </h2>
+                            <h2 className={styles.title}>
+                                What are you waiting for?
+                            </h2>
+                            <h2 className={styles.title}>
+                                Join us to start sharing content with your friends.
+                            </h2>
+                        </div>
+                        <Link to="/login" className={styles.link}>
+                            <button
+                                className={styles.btn}
                                 onClick={() => dispatch(closeSidebar())}
-                            />
+                            >
+                                Log In
+                            </button>
                         </Link>
-                        <Link to="/register">
-                            <Button
-                                text="Sign Up"
+                        <Link to="/register" className={styles.link}>
+                            <button
+                                className={styles.btn}
                                 onClick={() => dispatch(closeSidebar())}
-                            />
+                            >
+                                Register
+                            </button>
                         </Link>
                     </div>
                 }
-
                 <FaTimes
                     className={styles.closeSidebar}
                     onClick={() => dispatch(closeSidebar())}

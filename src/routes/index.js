@@ -1,3 +1,4 @@
+import CreateCommunity from "./CreateCommunity/CreateCommunity";
 import Community from "./Community/Community";
 import Home from "./Home/Home";
 import Layout from "./Layout/Layout";
@@ -8,6 +9,7 @@ import Register from "./Register/Register";
 import User from "./User/User";
 
 export {
+    CreateCommunity,
     Community,
     Home,
     Layout,

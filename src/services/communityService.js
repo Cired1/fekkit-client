@@ -8,7 +8,19 @@ const getCommunity = async (id) => {
     return response.data;
 }
 
+//Create community
+const createCommunity = async (data, token) => {
+    const config = {
+        headers: {
+            Authorization: `Bearer ${token}`
+        }
+    }
+    const response = await axios.post(API_URL, data, config);
+    return response.data;
+}
+
 const communityService = {
+    createCommunity,
     getCommunity
 }
 

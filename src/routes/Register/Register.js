@@ -94,7 +94,7 @@ const Register = () => {
                         placeholder="Confirm password"
                         onChange={handleChange}
                     />
-                    <button type="submit" className={styles.btnRegister}>Submit</button>
+                    <button type="submit" className={styles.btnRegister}>Register</button>
                 </form>
                 <div className={styles.register}>
                     <h4>Already have an account ?</h4>

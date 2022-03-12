@@ -7,6 +7,7 @@ import { FiLogOut, FiSettings } from "react-icons/fi";
 import { BiTimeFive } from "react-icons/bi";
 import TitleIcon from "../TitleIcon/TitleIcon";
 import styles from "./UserOptions.module.css";
+import { Link } from "react-router-dom";
 
 const UserOptions = () => {
 
@@ -28,13 +29,15 @@ const UserOptions = () => {
                         title="My profile"
                     />
                 </li>
-                <li>
-                    <TitleIcon
-                        icon={<FaLink />}
-                        title="Create a community"
-                    />
+                <li onClick={() => dispatch(closeSidebar())}>
+                    <Link to="/communities" className={styles.link}>
+                        <TitleIcon
+                            icon={<FaLink />}
+                            title="Create a community"
+                        />
+                    </Link>
                 </li>
-                <li>
+                {/* <li>
                     <TitleIcon
                         icon={<FaRegBookmark />}
                         title="Saved"
@@ -45,7 +48,7 @@ const UserOptions = () => {
                         icon={<BiTimeFive />}
                         title="History"
                     />
-                </li>
+                </li> */}
                 <li>
                     <TitleIcon
                         icon={<FiSettings />}

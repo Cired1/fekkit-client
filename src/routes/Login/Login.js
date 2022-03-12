@@ -36,7 +36,7 @@ const Login = () => {
             toast.success(`Welcome back u/${user.name}`, { theme: "dark" })
         }
         dispatch(reset());
-    }, [user, isError, isSuccess, message, navigate, dispatch])
+    }, [user, isSuccess, isError, message, navigate, dispatch])
 
     const handleChange = (e) => {
         setFormData((prevState) => ({
